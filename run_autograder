@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Set up autograder files
+
+cp /autograder/submission/col100_assignment_1.py /autograder/source/col100_assignment_1.py
+
+cd /autograder/source
+
+echo "running"
+python3 run_tests.py
+echo "Done"
