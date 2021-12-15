@@ -16,16 +16,15 @@ class TestSimpleArithmetic(unittest.TestCase):
         self.assertEqual(val, (True, True))
 
     @weight(1)
-    #@visibility('hidden')
-    def test_eval_add4(self):
+    def test_eval_add4_1(self):
         """Evaluate 0101+0101+0"""
         val = self.add4(True,False,True,False,True,False,True,False,False)
         print(val)
         self.assertEqual(val, (False,True,False,True,False))
 
     @weight(1)
-    def test_eval_add4(self):
-        """Evaluate 0101+0101+0"""
+    def test_eval_add4_2(self):
+        """Evaluate wrong 0101+0101+0"""
         val = self.add4(True,False,True,False,True,False,True,False,False)
         print(val)
         self.assertEqual(val, (False,True,False,True,True))
