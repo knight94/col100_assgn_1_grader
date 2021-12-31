@@ -25,7 +25,7 @@ class TestSimpleArithmetic(unittest.TestCase):
         self.mul4i = impt.mul4i
 
     @weight(0)
-    @visibility('after_published')
+    #@visibility('after_published')
     def test_eval_mul4(self):
         """Running test cases to check 4 bit multiplier"""
         for i,o in test_cases_part6.items():
@@ -35,7 +35,7 @@ class TestSimpleArithmetic(unittest.TestCase):
             self.assertEqual(val, o)
 
     @weight(0)
-    @visibility('after_published')
+    #@visibility('after_published')
     def test_eval_mul4i(self):
         """Running test cases to check 4 bit multiplier"""
         for i,o in test_cases_part6.items():
