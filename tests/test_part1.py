@@ -5,7 +5,12 @@ from os.path import isfile, join, splitext, basename
 subpath = "/autograder/submission"
 onlyfiles = [f for f in listdir(subpath) if isfile(join(subpath, f))]
 
-impt = __import__(splitext(onlyfiles[0])[0])
+fileimport = True
+try:
+    impt = __import__(splitext(onlyfiles[0])[0])
+except:
+    fileimport = False
+    print("Recheck your submitted files, follow the instruction given on Piazza")
 
 test_cases_part6 = {
             ((True, True, False, False), (True, True, False, False)):(True, False, False, True, False, False, False, False),
@@ -21,8 +26,12 @@ test_cases_part6 = {
                     }
 class TestSimpleArithmetic(unittest.TestCase):
     def setUp(self):
-        self.mul4 = impt.mul4
-        self.mul4i = impt.mul4i
+        if fileimport:
+            self.mul4 = impt.mul4
+            self.mul4i = impt.mul4i
+        else:
+            print("Recheck your submitted files, follow the instruction given on Piazza")
+            exit()
 
     @weight(0)
     #@visibility('after_published')

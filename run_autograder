@@ -2,7 +2,10 @@
 
 # Set up autograder files
 
-cp /autograder/submission/*.py /autograder/source/
+if cp /autograder/submission/*/*.py /autograder/submission/;
+then
+	cp /autograder/submission/*.py /autograder/source/
+fi
 
 cd /autograder/source
 
