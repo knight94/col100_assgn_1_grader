@@ -36,7 +36,7 @@ class TestSimpleArithmetic(unittest.TestCase):
     @weight(0)
     #@visibility('after_published')
     def test_eval_mul4i(self):
-        """Running test cases to check 4 bit multiplier"""
+        """Running test cases to check iterative 4 bit multiplier"""
         for i,o in test_cases_part6.items():
             val = self.mul4i(i[0], i[1])
             print("Input value: {}| expected output: {}| output: {}".format(i,o,val))
